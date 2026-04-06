@@ -1,1 +1,208 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ycon Infra - Transforming Spaces</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+        
+        :root {
+            --ycon-green: #00BF63;
+        }
+
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+            color: #1A1A1A;
+        }
+        .font-heading { font-family: 'Montserrat', sans-serif; }
+
+        .btn-ycon {
+            background-color: var(--ycon-green);
+            color: white;
+            font-weight: 700;
+            padding: 12px 28px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+        .btn-ycon:hover {
+            background-color: #008f4a;
+            transform: translateY(-2px);
+        }
+        .stats-divider {
+            height: 40px;
+            width: 1px;
+            background-color: #E5E7EB;
+        }
+
+        /* WhatsApp Floating Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            const stats = [
+                { label: "YEARS EXPERIENCE", value: "5+" },
+                { label: "PROJECTS DELIVERED", value: "10+" },
+                { label: "HAPPY FAMILIES", value: "500+" },
+                { label: "CITIES", value: "3+" }
+            ];
+
+            const whatsappNumber = "7568005371";
+            const whatsappMessage = encodeURIComponent("Hello Ycon Infra, I'm interested in your projects.");
+
+            return (
+                <div className="relative">
+                    {/* WHATSAPP FLOATING BUTTON */}
+                    <a 
+                        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                        className="whatsapp-float"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i className="fab fa-whatsapp"></i>
+                    </a>
+
+                    {/* NAV */}
+                    <nav className="bg-white pt-10 pb-12">
+                        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center text-[11px] font-bold uppercase tracking-[0.3em] text-slate-800">
+                            <div className="cursor-pointer hover:text-[#00BF63]">HOME</div>
+                            <div className="flex flex-col items-center">
+                                <div className="text-3xl font-heading font-extrabold tracking-tighter">YCON</div>
+                                <div className="text-[9px] -mt-1 font-bold tracking-[0.6em] text-slate-400">INFRA</div>
+                            </div>
+                            <div className="cursor-pointer hover:text-[#00BF63]">PROJECTS</div>
+                        </div>
+                    </nav>
+
+                    {/* HERO */}
+                    <header className="text-center pb-20">
+                        <div className="max-w-5xl mx-auto px-6">
+                            <h1 className="text-[#00BF63] font-heading text-5xl md:text-7xl font-extrabold uppercase mb-6 leading-[1.1] tracking-tighter">
+                                Transforming Spaces, <br/> Building Futures
+                            </h1>
+                            <p className="text-slate-500 text-sm mb-10 tracking-widest font-semibold uppercase">
+                                Leading Real Estate Developer for Modern Homes.
+                            </p>
+                            <button className="btn-ycon">EXPLORE OUR PROJECTS</button>
+                        </div>
+                    </header>
+
+                    {/* MAIN IMAGE BANNER */}
+                    <section className="relative h-[480px] overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
+                            className="w-full h-full object-cover" 
+                            alt="Modern Architecture" 
+                        />
+                        <div className="absolute bottom-0 w-full h-2.5 bg-[#00BF63]"></div>
+                    </section>
+
+                    {/* VISION SECTION */}
+                    <section className="py-28">
+                        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h5 className="text-[#00BF63] font-bold uppercase text-[10px] tracking-[0.4em] mb-5">OUR VISION</h5>
+                                <h2 className="text-[#1A1A1A] font-heading text-4xl md:text-5xl font-extrabold uppercase mb-8 leading-tight tracking-tight">
+                                    Redefining <br/> the Real <br/> Estate <br/> Landscape
+                                </h2>
+                                <p className="text-slate-500 mb-10 leading-relaxed text-[15px] font-medium max-w-md">
+                                    At Ycon Infra, we aim to redefine the real estate landscape by creating sustainable and innovative living spaces. Our commitment to quality and excellence drives us to deliver projects that resonate with modern lifestyles.
+                                </p>
+                                <button className="btn-ycon">VIEW OUR PROJECTS</button>
+                            </div>
+                            <div className="flex justify-center md:justify-end">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000" 
+                                    className="w-[320px] h-[320px] object-cover rounded shadow-2xl" 
+                                    alt="Vision Building" 
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* STATS */}
+                    <section className="bg-slate-50 py-14 border-y border-slate-100">
+                        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-0 text-center">
+                            {stats.map((stat, i) => (
+                                <React.Fragment key={i}>
+                                    <div className="flex-1 min-w-[120px]">
+                                        <div className="text-4xl font-extrabold font-heading text-[#1A1A1A]">{stat.value}</div>
+                                        <div className="text-[10px] uppercase font-bold text-slate-400 mt-2 tracking-widest">{stat.label}</div>
+                                    </div>
+                                    {i < stats.length - 1 && <div className="hidden md:block stats-divider"></div>}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* CONTACT */}
+                    <section className="py-28">
+                        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                            <div>
+                                <h5 className="text-[#00BF63] font-bold uppercase text-[10px] tracking-[0.4em] mb-5">GET IN TOUCH</h5>
+                                <h2 className="text-[#1A1A1A] font-heading text-4xl md:text-5xl font-extrabold uppercase leading-tight tracking-tight">
+                                    We're just a <br/> message <br/> away
+                                </h2>
+                            </div>
+                            <div className="flex justify-center md:justify-end">
+                                <div className="w-full max-w-[350px] aspect-square bg-slate-100 rounded-lg overflow-hidden shadow-inner border border-slate-200">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1000" 
+                                        className="w-full h-full object-cover grayscale opacity-80" 
+                                        alt="Location Map"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
